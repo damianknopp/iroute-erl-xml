@@ -7,6 +7,8 @@ You will need to install erlsom. http://erlsom.sourceforge.net/
 
 
 Also here is my ~/.erlang file.  It loads the lib path.
+
+>
 	io:format("-----Loading .erlang config v1.0------~n").
 	Cwd= ".".
 	Erlsom = "/Users/dmknopp/erlang-install/erlsom/ebin".
