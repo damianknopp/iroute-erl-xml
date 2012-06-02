@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<m:happening xmlns:m="http://www.tribeknopp.com">
+	<m:what>saw</m:what>
+	<m:who>zink</m:who>
+	<m:where>in the sink</m:where>
+	<m:when>yesterday</m:when>
+</m:happening>
+<m:happening xmlns:m="http://www.tribeknopp.com">
+	<m:what>saw</m:what>
+	<m:who>zamp</m:who>
+	<m:where>in the lamp</m:where>
+	<m:when>yesterday</m:when>
+</m:happening>

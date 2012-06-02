@@ -1,0 +1,35 @@
+-module(iroute_server).
+
+-behaviour(gen_server).
+-export([start/0]).
+%% gen_server callbacks
+
+-export([init/1, handle_call/3, handle_cast/2, handle_info/2, terminate/2, code_change/3]).
+-compile(export_all).
+
+start() -> io:format("starting iroute_server~n"), gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+stop()  -> gen_server:call(?MODULE, stop).
+
+on_message(Xml) -> io:format("recieved on_message ~p~n", [Xml]), gen_server:call(?MODULE, {onmessage, Xml}).  
+
+%% todo:
+%% activate user 
+	%% init users mailbox
+%% deactivate user
+	%% kill users mailbox
+
+init([]) ->
+	%% init xsd stuff
+	{ok, 0}.
+
+handle_call({onmessage, _Xml}, _From, Tab) ->
+	%% parse stuff, deliver message
+	{reply, onmessage, Tab};
+handle_call(stop, _From, Tab) ->
+	{stop, normal, stopped, Tab}.
+
+handle_cast(_Msg, State)   -> {noreply, State}.
+handle_info(_Info, State)  -> {noreply, State}.
+terminate(_Reason, _State) -> ok.
+code_change(_OldVersion, State, _Extra) -> {ok, State}.
+

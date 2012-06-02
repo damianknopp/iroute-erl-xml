@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.tribeknopp.com" xmlns="http://www.tribeknopp.com"
+ elementFormDefault="qualified">
+	<xsd:element name="happening" type="happeningType"/>
+	<xsd:complexType name="happeningType">
+		<xsd:sequence>
+			<xsd:element name="what" type="xsd:string"/>
+			<xsd:element name="who" type="xsd:string"/>
+			<xsd:element name="where" type="xsd:string"/>
+			<xsd:element name="when" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
